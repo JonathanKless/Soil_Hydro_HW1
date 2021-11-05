@@ -15,7 +15,7 @@ Exercise 9.3
 h = np.linspace(-0.1, -1500, 100)
 
 #hydraulic parameters are given as such (lecture notes 2, p.35)
-#Formated as [Sand, Loam, Clay]
+#and formatted as [Sand, Loam, Clay]
 theta_s = [0.43, 0.44, 0.43]
 theta_r = [0.04, 0.07, 0.09]
 alpha = [0.14, 0.016, 0.008]
@@ -29,3 +29,14 @@ theta = lambda i: theta_r[i]+(theta_s[i]-theta_r[i])/((1+(alpha[i]*np.absolute(h
 if np.any(h>=0): 
     theta[h>=0]=theta_s
 
+#plotting volumetric Soil water content for given soil types
+plt.figure("Exercise 3")
+plt.semilogy(theta(0), np.absolute(h), label="Sand", color="r")
+plt.semilogy(theta(1), np.absolute(h), label="Loam", color="g")
+plt.semilogy(theta(2), np.absolute(h), label="Clay", color="b")
+plt.xlabel("SWC [cm3/cm3]", **csfont)
+plt.ylabel("Matric potential [cm]", **csfont)
+plt.title("Exercise 3", **csfont)
+plt.legend(loc="best", fancybox=True)
+plt.grid()
+plt.show()
