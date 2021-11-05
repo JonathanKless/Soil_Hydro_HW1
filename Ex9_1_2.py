@@ -7,15 +7,15 @@ from matplotlib import pyplot as plt
 
 csfont = {'fontname':'Comic Sans MS'}
 
-"""
-Exercise 9.1
-"""
-
 #example values for matric potential [cm] 
 h = np.array([-1, -10, -60, -100, -300, -1000, -3000, -15000])
 
 #example values for volumetric Soil water content [cm3/cm3]
 theta = np.array([0.43, 0.40, 0.31, 0.25, 0.19, 0.09, 0.07, 0.06])
+
+"""
+Exercise 9.1
+"""
 
 #creating the plot
 plt.figure("Exercise 1")
