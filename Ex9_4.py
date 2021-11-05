@@ -42,45 +42,25 @@ if np.any(h>=0):
 #plotting K(h) for given soil types, in seperate subplots
 plt.figure("Exercise 9.4")
 
-plt.subplot(3,1,1)
-plt.loglog(np.absolute(h), K(0), label="Sand", color="r")
-plt.xlabel("Matric potential [cm]", **csfont)
-plt.ylabel("Hydraulic conductivity [cm/s]", **csfont)
-plt.title("Exercise 4 /Sand", **csfont)
-plt.legend(loc="best", fancybox=True)
-plt.grid()
-plt.tight_layout()
 
-plt.subplot(3,1,2)
-plt.loglog(np.absolute(h), K(1), label="Loam", color="b")
-plt.xlabel("Matric potential [cm]", **csfont)
-plt.ylabel("Hydraulic conductivity [cm/s]", **csfont)
-plt.title("Exercise 4 /Loam", **csfont)
-plt.legend(loc="best", fancybox=True)
-plt.grid()
-plt.tight_layout()
+fig, axs = plt.subplots(3, figsize=(4,12))
+fig.suptitle('Exercise 4', fontsize=15, x=0)
+fig.tight_layout(h_pad=4)
+axs[0].loglog(np.absolute(h), K(0), label="Sand", color="r")
+axs[0].set_title("Sand")
+axs[0].grid()
+axs[1].loglog(np.absolute(h), K(1), label="Loam", color="b")
+axs[1].set_title("Loam")
+axs[1].grid()
+axs[2].loglog(np.absolute(h), K(2), label="Clay", color="g")
+axs[2].set_title("Clay")
+axs[2].grid()
 
-plt.subplot(3,1,3)
-plt.loglog(np.absolute(h), K(2), label="Clay", color="g")
-plt.xlabel("Matric potential [cm]", **csfont)
-plt.ylabel("Hydraulic conductivity [cm/s]", **csfont)
-plt.title("Exercise 4 /Clay", **csfont)
-plt.legend(loc="best", fancybox=True)
-plt.grid()
-plt.tight_layout()
+for ax in axs.flat:
+    ax.set(xlabel='Matric potential [cm]', ylabel='Hydraulic conductivity [cm/s]')
 
-plt.show()
-
-
-
-
-
-
-
-
-
-
-
+#saving the plot to current directory
+plt.savefig(fname="Exercise_4.png", dpi=200, format="png", bbox_inches='tight')
 
 
 

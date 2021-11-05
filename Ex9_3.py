@@ -39,4 +39,6 @@ plt.ylabel("Matric potential [cm]", **csfont)
 plt.title("Exercise 3", **csfont)
 plt.legend(loc="best", fancybox=True)
 plt.grid()
-plt.show()
+
+#saving the plot to current directory
+plt.savefig(fname="Exercise_3.png", dpi=200, format="png")
