@@ -34,10 +34,59 @@ if np.any(h>=0):
 Theta = lambda i: (theta(i)-theta_r[i])/(theta_s[i]-theta_r[i])
 
 #deriving K(h) by van-Genuchten-Mualem equation
-K = lambda i: Ksat[i]*(Theta(i)**lambda_k[i])*(1-(1-Theta(i)**1/m[i])**m[i])**2
+K = lambda i: Ksat[i]*(Theta(i)**lambda_k[i])*(1-(1-Theta(i)**(1/m[i]))**m[i])**2
 
 if np.any(h>=0): 
     K[h>=0]=Ksat
     
 #plotting K(h) for given soil types, in seperate subplots
 plt.figure("Exercise 9.4")
+
+plt.subplot(3,1,1)
+plt.loglog(np.absolute(h), K(0), label="Sand", color="r")
+plt.xlabel("Matric potential [cm]", **csfont)
+plt.ylabel("Hydraulic conductivity [cm/s]", **csfont)
+plt.title("Exercise 4 /Sand", **csfont)
+plt.legend(loc="best", fancybox=True)
+plt.grid()
+plt.tight_layout()
+
+plt.subplot(3,1,2)
+plt.loglog(np.absolute(h), K(1), label="Loam", color="b")
+plt.xlabel("Matric potential [cm]", **csfont)
+plt.ylabel("Hydraulic conductivity [cm/s]", **csfont)
+plt.title("Exercise 4 /Loam", **csfont)
+plt.legend(loc="best", fancybox=True)
+plt.grid()
+plt.tight_layout()
+
+plt.subplot(3,1,3)
+plt.loglog(np.absolute(h), K(2), label="Clay", color="g")
+plt.xlabel("Matric potential [cm]", **csfont)
+plt.ylabel("Hydraulic conductivity [cm/s]", **csfont)
+plt.title("Exercise 4 /Clay", **csfont)
+plt.legend(loc="best", fancybox=True)
+plt.grid()
+plt.tight_layout()
+
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
