@@ -1,6 +1,6 @@
 """
 @author: Jonathan Kless
-Homework Assignment No.1 part 2 (Lecture Notes 2; Ex 9.4)
+Homework Assignment No.1 part 3 (Lecture Notes 2; Ex 9.4)
 """
 import numpy as np
 from matplotlib import pyplot as plt
