@@ -79,6 +79,7 @@ import matplotlib.pyplot as plt
 #     Theta[h>=0]=Theta_s
 
 #plot each curve in seperate subplot!
+#maybe split into figures for each soil type? 
 
 
 
