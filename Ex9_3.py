@@ -12,7 +12,7 @@ Exercise 9.3
 """
 
 #values for matric potential are given as a range (-0.1, -15000) [cm] 
-h = np.linspace(-0.1, -1500, 100)
+h = np.linspace(-0.1, -15000, 100)
 
 #hydraulic parameters are given as such (lecture notes 2, p.35)
 #and formatted as [Sand, Loam, Clay]
@@ -29,7 +29,7 @@ theta = lambda i: theta_r[i]+(theta_s[i]-theta_r[i])/((1+(alpha[i]*np.absolute(h
 if np.any(h>=0): 
     theta[h>=0]=theta_s
 
-#plotting volumetric Soil water content for given soil types
+#plotting volumetric Soil water content for given soil textures [Sand, Loam, Clay]
 plt.figure("Exercise 3")
 plt.semilogy(theta(0), np.absolute(h), label="Sand", color="r")
 plt.semilogy(theta(1), np.absolute(h), label="Loam", color="g")

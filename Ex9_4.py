@@ -12,7 +12,7 @@ Exercise 9.4
 """
 
 #values for matric potential are given as a range (-0.1, -15000) [cm] 
-h = np.linspace(-0.1, -1500, 100)
+h = np.linspace(-0.1, -15000, 100)
 
 #hydraulic parameters are given as such (lecture notes 2, p.35)
 #and formatted as [Sand, Loam, Clay]
@@ -39,9 +39,8 @@ K = lambda i: Ksat[i]*(Theta(i)**lambda_k[i])*(1-(1-Theta(i)**(1/m[i]))**m[i])**
 if np.any(h>=0): 
     K[h>=0]=Ksat
     
-#plotting K(h) for given soil types, in seperate subplots
+#plotting K(h) for given soil textures, in seperate subplots
 plt.figure("Exercise 9.4")
-
 
 fig, axs = plt.subplots(3, figsize=(4,12))
 fig.suptitle('Exercise 4', fontsize=15, x=0)
