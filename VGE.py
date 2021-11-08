@@ -19,14 +19,7 @@ def VGE(Dic,i):
     n = Dic["n"][i]
     m = Dic["m"][i]
     
-    # print(theta_s)
-    # print(theta_r)
-    # print(alpha)
-    # print(n)
-    # print(m)
-    # print(h)
-    
-    theta = theta_r[i]+(theta_s[i]-theta_r[i])/((1+(alpha[i]*np.absolute(h))**n[i])**m[i])
+    theta = theta_r+(theta_s-theta_r)/((1+(alpha*np.absolute(h))**n)**m)
     figure_title = "Data for //file name, row:" + str(i)
     plt.figure(figure_title)
     plt.semilogy(theta, np.absolute(h), label="Derived Values")
