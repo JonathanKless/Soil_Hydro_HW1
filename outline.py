@@ -7,6 +7,23 @@ Created on Thu Nov  4 15:34:21 2021
 
 import numpy as np
 import matplotlib.pyplot as plt
+"""
+For next exercise
+"""
+
+# #rewrite as function taking arguments
+# def VGE(a,b,h):
+#     a = ["Key"] i.e. Theta etc see lecture
+#     b = ["Value"]
+#     +
+
+#Input should b a dictionary (csv file) of hyrdaulic parameters /and h 
+
+
+
+
+
+
 
 
 # plots / stylings
